@@ -24,6 +24,14 @@ bun install
 
 Start the development server on `http://localhost:3000`:
 
+Set your Google Maps key first (`GOOGLE_API_KEY` is supported directly):
+
+```bash
+export GOOGLE_API_KEY=your_key_here
+# or:
+export NUXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here
+```
+
 ```bash
 # npm
 npm run dev
