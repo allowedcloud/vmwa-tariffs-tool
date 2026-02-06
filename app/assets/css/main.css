@@ -65,6 +65,7 @@ body {
 
 .quote-card h1 {
   margin: 0;
+  font-weight: 700;
 }
 
 .quote-help {
@@ -93,8 +94,8 @@ body {
 
 .quote-form button {
   border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
+  background: #000000;
+  color: #ffffff;
   border-radius: 0.5rem;
   padding: 0.6rem 0.75rem;
   cursor: pointer;

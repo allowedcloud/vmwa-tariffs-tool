@@ -16,8 +16,9 @@ export default defineEventHandler((event) => {
     return getQuote(miles, weight)
   }
   catch (error) {
+    const isInputError = error instanceof TypeError || error instanceof RangeError
     throw createError({
-      statusCode: 400,
+      statusCode: isInputError ? 400 : 500,
       statusMessage: error instanceof Error ? error.message : 'Invalid quote request',
     })
   }

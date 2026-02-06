@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { RATE_CHART_CSV } from './rateChartCsv.js'
 
 const OVER_COLUMN_NAME = '12000 and over'
 let cachedChart = null
@@ -146,8 +147,10 @@ function parseRateChartCsv(csvText) {
   return normalizeChart({ rows, weightColumns })
 }
 
-function loadRateChart(csvPath = resolve(process.cwd(), 'mileage_weight_rate_chart.csv')) {
-  const raw = readFileSync(csvPath, 'utf8')
+function loadRateChart(csvPath) {
+  const raw = csvPath
+    ? readFileSync(resolve(csvPath), 'utf8')
+    : RATE_CHART_CSV
   return parseRateChartCsv(raw)
 }
 
